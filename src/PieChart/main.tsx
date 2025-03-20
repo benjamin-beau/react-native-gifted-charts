@@ -1,21 +1,21 @@
-import React, {useState} from 'react';
-import {Pressable, View} from 'react-native';
-import Svg, {
-  Path,
-  Circle,
-  Text as SvgText,
-  Defs,
-  RadialGradient,
-  Stop,
-  G,
-  Line,
-} from 'react-native-svg';
 import {
   getPieChartMainProps,
   PieChartMainProps,
   pieColors,
 } from 'gifted-charts-core';
-import {isWebApp, rnVersion} from '../utils';
+import React, { useState } from 'react';
+import { Pressable, View } from 'react-native';
+import Svg, {
+  Circle,
+  Defs,
+  G,
+  Line,
+  Path,
+  RadialGradient,
+  Stop,
+  Text as SvgText,
+} from 'react-native-svg';
+import { isWebApp, rnVersion } from '../utils';
 
 export const PieChartMain = (props: PieChartMainProps) => {
   const {
@@ -378,8 +378,8 @@ export const PieChartMain = (props: PieChartMainProps) => {
                   )}
                   {localPieInnerComponent ? (
                     <G 
-                      x={x + pieInnerComponentHeight / 2} 
-                      y={y + pieInnerComponentWidth / 2}
+                      x={x - pieInnerComponentHeight / 2} 
+                      y={y - pieInnerComponentWidth / 2}
                     >
                       {localPieInnerComponent?.(item, index) ?? null}
                     </G>
